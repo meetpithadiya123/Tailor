@@ -1,0 +1,170 @@
+/* ============================================================
+   Navbar Component Styles
+   ============================================================ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #FDF4EE;
+  border-bottom: 1px solid #E8D0C8;
+  box-shadow: 0 2px 12px rgba(122, 46, 57, 0.08);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+/* ── Brand ─────────────────────────────────────────────────── */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar__logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #7A2E39;
+  box-shadow: 0 2px 8px rgba(122, 46, 57, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.navbar__brand:hover .navbar__logo-img {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__brand-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #7A2E39;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.navbar__brand-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B4E54;
+}
+
+/* ── Desktop Links ─────────────────────────────────────────── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .navbar__links {
+    display: none;
+  }
+}
+
+.navbar__link {
+  color: #332226;
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar__link:hover {
+  color: #7A2E39;
+  border-bottom-color: #7A2E39;
+}
+
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #7A2E39;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(122, 46, 57, 0.25);
+}
+
+.navbar__cta:hover {
+  background: #5A1E27;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(122, 46, 57, 0.35);
+}
+
+/* ── Hamburger ─────────────────────────────────────────────── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .navbar__hamburger {
+    display: flex;
+  }
+}
+
+.navbar__hamburger span {
+  width: 100%;
+  height: 2.5px;
+  background: #7A2E39;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ── Mobile menu ───────────────────────────────────────────── */
+.navbar__mobile {
+  display: none;
+  flex-direction: column;
+  background: #FDF4EE;
+  border-top: 1px solid #E8D0C8;
+  padding: 8px 0 16px;
+  box-shadow: 0 8px 16px rgba(122, 46, 57, 0.1);
+}
+
+.navbar__mobile.open {
+  display: flex;
+}
+
+.navbar__mobile .navbar__link {
+  color: #332226;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(232, 208, 200, 0.5);
+  transition: background 0.2s;
+}
+
+.navbar__mobile .navbar__link:hover {
+  background: #F9EDE8;
+  color: #7A2E39;
+}

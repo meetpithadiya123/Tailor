@@ -1,0 +1,343 @@
+/* ============================================================
+   Specialities / Services Section Styles
+   ============================================================ */
+
+.specialities {
+  background: #FFF9F5;
+  padding: 72px 0 80px;
+  border-bottom: 1px solid #E8D0C8;
+}
+
+.specialities__header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.specialities__header .section-subtitle {
+  color: #6B4E54;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ── Cards Grid ─────────────────────────────────────────────── */
+.specialities__cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .specialities__cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .specialities__cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* ── Individual Service Card ────────────────────────────────── */
+.service-card {
+  background: #ffffff;
+  border: 1px solid #E8D0C8;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(122, 46, 57, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(122, 46, 57, 0.12);
+  border-color: #7A2E39;
+}
+
+.service-card__image-wrap {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: #F9EDE8;
+}
+
+.service-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.service-card:hover .service-card__image-wrap img {
+  transform: scale(1.06);
+}
+
+.service-card__content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-card__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #7A2E39;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.service-card__desc {
+  font-size: 0.86rem;
+  color: #554448;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.service-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.service-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #6B4E54;
+  line-height: 1.35;
+}
+
+.service-card__features svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-card__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.service-card__btn-details {
+  flex: 1;
+  background: #FDF4EE;
+  border: 1px solid #E8D0C8;
+  color: #7A2E39;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.service-card__btn-details:hover {
+  background: #7A2E39;
+  color: #ffffff;
+  border-color: #7A2E39;
+}
+
+.service-card__btn-enquire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #25D366;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.service-card__btn-enquire:hover {
+  background: #1EBE5D;
+}
+
+/* ── Service Detail Modal (Clean, No Prices/Days) ───────────── */
+.service-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 20, 25, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.service-modal-box {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 1px solid #E8D0C8;
+  padding: 32px;
+}
+
+@media (max-width: 768px) {
+  .service-modal-box {
+    padding: 24px 18px;
+  }
+}
+
+.service-modal-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .service-modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-modal-img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(122, 46, 57, 0.12);
+  border: 1px solid #E8D0C8;
+}
+
+.service-modal-img-wrap img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.service-modal-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  color: #7A2E39;
+  margin: 6px 0 12px;
+}
+
+.service-modal-desc {
+  font-size: 0.9rem;
+  color: #554448;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.service-modal-block {
+  margin-bottom: 16px;
+}
+
+.service-modal-block h4 {
+  font-size: 0.86rem;
+  color: #7A2E39;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.service-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-tag {
+  background: #FDF4EE;
+  border: 1px solid #E8D0C8;
+  color: #7A2E39;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.service-tag--fabric {
+  background: #FFF9F5;
+  color: #6B4E54;
+}
+
+.service-modal-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.service-modal-bullets li {
+  font-size: 0.84rem;
+  color: #554448;
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.45;
+}
+
+.service-modal-bullets li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #7A2E39;
+  font-weight: bold;
+}
+
+.service-modal-cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.modal-cta-btn {
+  background: #25D366;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.modal-cta-btn:hover {
+  background: #1EBE5D;
+}
+
+.modal-cta-call {
+  background: #FDF4EE;
+  border: 1.5px solid #7A2E39;
+  color: #7A2E39;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.modal-cta-call:hover {
+  background: #7A2E39;
+  color: #ffffff;
+}
