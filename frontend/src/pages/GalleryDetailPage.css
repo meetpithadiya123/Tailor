@@ -363,6 +363,12 @@
   background: #FDF4EE;
   border-bottom: 1px solid #E8D0C8;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.detail-tabs-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .detail-tab-btn {
@@ -915,24 +921,28 @@
 
 .modal-close-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  background: #F9EDE8;
-  border: none;
-  width: 32px;
-  height: 32px;
+  top: 14px;
+  right: 14px;
+  background: #ffffff;
+  border: 1px solid #E8D0C8;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   color: #7A2E39;
   font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .modal-close-btn:hover {
-  background: #E8D0C8;
+  background: #7A2E39;
+  color: #ffffff;
 }
 
 .modal-title {

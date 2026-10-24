@@ -54,6 +54,31 @@
   letter-spacing: -0.01em;
 }
 
+@media (max-width: 480px) {
+  .navbar__logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  .navbar__brand-name {
+    font-size: 1.25rem;
+  }
+  .navbar__brand-sub {
+    font-size: 0.65rem;
+  }
+  .navbar__inner {
+    height: 64px;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar__brand-name {
+    font-size: 1.12rem;
+  }
+  .navbar__brand {
+    gap: 8px;
+  }
+}
+
 .navbar__brand-sub {
   font-size: 0.72rem;
   font-weight: 600;
