@@ -78,8 +78,12 @@
 }
 
 @media (max-width: 600px) {
+  .detail-breadcrumb__inner {
+    gap: 8px;
+  }
   .detail-breadcrumb__current {
-    max-width: 180px;
+    max-width: calc(100vw - 170px);
+    font-size: 0.82rem;
   }
   .detail-back-btn {
     margin-left: 0;
@@ -91,20 +95,20 @@
 
 /* ── Detail Hero Section ────────────────────────────────────── */
 .detail-hero {
-  padding: 40px 0 60px;
+  padding: 32px 0 50px;
 }
 
 .detail-hero__grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   gap: 48px;
   align-items: start;
 }
 
 @media (max-width: 991px) {
   .detail-hero__grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
   }
 }
 
@@ -112,6 +116,8 @@
 .detail-visual {
   position: sticky;
   top: 90px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 @media (max-width: 991px) {
@@ -189,6 +195,7 @@
   flex-direction: column;
   gap: 12px;
   margin-top: 24px;
+  width: 100%;
 }
 
 .detail-trust-card {
@@ -199,6 +206,13 @@
   border: 1px solid #E8D0C8;
   border-radius: 12px;
   padding: 14px 16px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.detail-trust-card > div:last-child {
+  min-width: 0;
+  flex: 1;
 }
 
 .detail-trust-icon {
@@ -218,6 +232,7 @@
   font-size: 0.9rem;
   color: #7A2E39;
   margin-bottom: 2px;
+  word-break: break-word;
 }
 
 .detail-trust-card p {
@@ -225,6 +240,7 @@
   font-size: 0.8rem;
   color: #6B4E54;
   line-height: 1.4;
+  word-break: break-word;
 }
 
 /* ── Right Column: Content & Options ────────────────────────── */
@@ -234,11 +250,15 @@
   border-radius: 16px;
   padding: 36px;
   box-shadow: 0 8px 30px rgba(122, 46, 57, 0.06);
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 576px) {
   .detail-content {
-    padding: 22px 16px;
+    padding: 20px 14px;
+    border-radius: 12px;
   }
 }
 
@@ -279,11 +299,20 @@
   color: #7A2E39;
   line-height: 1.25;
   margin: 0 0 10px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 576px) {
   .detail-title {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 380px) {
+  .detail-title {
+    font-size: 1.3rem;
   }
 }
 
@@ -317,14 +346,15 @@
 /* Highlights Grid */
 .detail-highlights-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 28px;
 }
 
 @media (max-width: 500px) {
   .detail-highlights-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
   }
 }
 
@@ -335,6 +365,7 @@
   padding: 12px 14px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .detail-highlight-label {
@@ -348,6 +379,7 @@
 .detail-highlight-val {
   font-size: 0.9rem;
   color: #7A2E39;
+  word-break: break-word;
 }
 
 /* ── Tabs Container ─────────────────────────────────────────── */
@@ -356,6 +388,8 @@
   border: 1px solid #E8D0C8;
   border-radius: 12px;
   overflow: hidden;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .detail-tabs-nav {
@@ -365,6 +399,8 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  max-width: 100%;
+  width: 100%;
 }
 
 .detail-tabs-nav::-webkit-scrollbar {
@@ -372,9 +408,9 @@
 }
 
 .detail-tab-btn {
-  flex: 1;
-  min-width: 130px;
-  padding: 12px 16px;
+  flex: 1 0 auto;
+  min-width: 110px;
+  padding: 12px 14px;
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
@@ -385,6 +421,23 @@
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s ease;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .detail-tab-btn {
+    min-width: 100px;
+    padding: 10px 10px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .detail-tab-btn {
+    min-width: 90px;
+    padding: 8px 6px;
+    font-size: 0.72rem;
+  }
 }
 
 .detail-tab-btn:hover {
@@ -401,6 +454,14 @@
 .detail-tab-panel {
   padding: 20px;
   background: #ffffff;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 576px) {
+  .detail-tab-panel {
+    padding: 16px 12px;
+  }
 }
 
 /* Tab 1: Craftsmanship */
@@ -536,10 +597,18 @@
 }
 
 /* Tab 3: Specs Table */
+.tab-pane-specs {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .specs-table {
   width: 100%;
+  min-width: 240px;
   border-collapse: collapse;
   font-size: 0.86rem;
+  word-break: break-word;
 }
 
 .specs-table th {
@@ -550,12 +619,26 @@
   font-weight: 600;
   border-bottom: 1px solid #E8D0C8;
   width: 38%;
+  vertical-align: top;
 }
 
 .specs-table td {
   padding: 10px 12px;
   border-bottom: 1px solid #E8D0C8;
   color: #554448;
+  vertical-align: top;
+}
+
+@media (max-width: 480px) {
+  .specs-table {
+    font-size: 0.8rem;
+  }
+  .specs-table th, .specs-table td {
+    padding: 8px 8px;
+  }
+  .specs-table th {
+    width: 44%;
+  }
 }
 
 /* ── Action Buttons ─────────────────────────────────────────── */
@@ -564,6 +647,7 @@
   flex-direction: column;
   gap: 12px;
   margin-bottom: 24px;
+  width: 100%;
 }
 
 .detail-btn {
@@ -571,15 +655,27 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 24px;
+  padding: 14px 20px;
   border-radius: 10px;
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
   box-sizing: border-box;
+  text-align: center;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  .detail-btn {
+    padding: 12px 14px;
+    font-size: 0.84rem;
+    gap: 8px;
+    line-height: 1.35;
+  }
 }
 
 .detail-btn--whatsapp {
@@ -618,7 +714,7 @@
 
 .detail-shop-info {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   background: #FDF4EE;
   border: 1px dashed #D4A5A5;
@@ -626,11 +722,20 @@
   padding: 12px 14px;
   font-size: 0.82rem;
   color: #6B4E54;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .detail-shop-info svg {
   color: #7A2E39;
   flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.detail-shop-info span {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ── 4-Step Process Section ─────────────────────────────────── */
@@ -649,19 +754,21 @@
 
 .process-steps-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
 
 @media (max-width: 991px) {
   .process-steps-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 }
 
 @media (max-width: 576px) {
   .process-steps-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
   }
 }
 
@@ -710,13 +817,14 @@
 
 .detail-reviews-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
 @media (max-width: 768px) {
   .detail-reviews-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 }
 
@@ -726,6 +834,8 @@
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 4px 18px rgba(122, 46, 57, 0.05);
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .detail-review-stars {
@@ -740,6 +850,7 @@
   font-style: italic;
   line-height: 1.6;
   margin-bottom: 14px;
+  word-break: break-word;
 }
 
 .detail-review-author strong {
@@ -762,20 +873,22 @@
 
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
   margin-bottom: 36px;
 }
 
 @media (max-width: 991px) {
   .related-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 }
 
 @media (max-width: 576px) {
   .related-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 }
 
@@ -898,6 +1011,7 @@
   align-items: center;
   justify-content: center;
   padding: 16px;
+  box-sizing: border-box;
 }
 
 .appointment-modal-box {
@@ -911,11 +1025,14 @@
   border: 1px solid #E8D0C8;
   max-height: 90vh;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 @media (max-width: 500px) {
   .appointment-modal-box {
-    padding: 24px 18px;
+    padding: 22px 16px;
+    margin: 8px;
+    max-height: 92vh;
   }
 }
 

@@ -99,12 +99,24 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 576px) {
   .container {
     padding: 0 16px;
   }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* ── Global Defensive Responsiveness ────────────────────────── */
+h1, h2, h3, h4, h5, h6, p, a, span, button, li, label, strong, em {
+  overflow-wrap: break-word;
 }
 
 /* ── Typography Utilities ──────────────────────────────────── */

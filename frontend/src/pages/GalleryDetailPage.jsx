@@ -300,7 +300,7 @@ export default function GalleryDetailPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
                   </svg>
-                  Enquire & Order on WhatsApp (+91 76986 03287)
+                  <span>Enquire &amp; Order on WhatsApp (+91 76986 03287)</span>
                 </a>
 
                 <button
@@ -314,7 +314,7 @@ export default function GalleryDetailPage() {
                     <line x1="8" y1="2" x2="8" y2="6"/>
                     <line x1="3" y1="10" x2="21" y2="10"/>
                   </svg>
-                  Book Measurement Appointment
+                  <span>Book Measurement Appointment</span>
                 </button>
 
                 <a
@@ -324,7 +324,7 @@ export default function GalleryDetailPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.72 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.36 1.85.6 2.81.72A2 2 0 0122 16.92z"/>
                   </svg>
-                  Call Master Tailor: +91 76986 03287
+                  <span>Call Master Tailor: +91 76986 03287</span>
                 </a>
               </div>
 

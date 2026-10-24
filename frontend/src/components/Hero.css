@@ -24,15 +24,15 @@
 
 .hero__inner {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   align-items: center;
   gap: 40px;
 }
 
 @media (max-width: 991px) {
   .hero__inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
     text-align: center;
   }
 }
@@ -40,6 +40,8 @@
 /* Left content */
 .hero__content {
   z-index: 2;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero__eyebrow {
@@ -177,21 +179,21 @@
 
 .hero__benefits-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
   align-items: center;
 }
 
 @media (max-width: 991px) {
   .hero__benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 }
 
 @media (max-width: 500px) {
   .hero__benefits-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
   }
 }
